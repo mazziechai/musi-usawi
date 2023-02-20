@@ -17,7 +17,6 @@ dependencies {
   api "io.github.libktx:ktx-freetype:$ktxVersion"
   api "io.github.libktx:ktx-graphics:$ktxVersion"
   api "io.github.libktx:ktx-i18n:$ktxVersion"
-  api "io.github.libktx:ktx-inject:$ktxVersion"
   api "io.github.libktx:ktx-json:$ktxVersion"
   api "io.github.libktx:ktx-log:$ktxVersion"
   api "io.github.libktx:ktx-math:$ktxVersion"
@@ -30,4 +29,5 @@ dependencies {
   api "net.onedaybeard.artemis:artemis-odb:$artemisOdbVersion"
   api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
   api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
+  api "io.insert-koin:koin-core:$koinVersion"
 }
