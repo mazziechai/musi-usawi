@@ -2,13 +2,13 @@
 eclipse.project.name = appName + '-core'
 
 dependencies {
+  api "com.badlogicgames.gdx:gdx-ai:1.8.2"
   api "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
   api "com.badlogicgames.gdx:gdx:$gdxVersion"
   api "com.kotcrab.vis:vis-ui:$visUiVersion"
   api "com.strongjoshua:libgdx-inGameConsole:$inGameConsoleVersion"
   api "io.github.libktx:ktx-actors:$ktxVersion"
   api "io.github.libktx:ktx-app:$ktxVersion"
-  api "io.github.libktx:ktx-artemis:$ktxVersion"
   api "io.github.libktx:ktx-assets-async:$ktxVersion"
   api "io.github.libktx:ktx-assets:$ktxVersion"
   api "io.github.libktx:ktx-async:$ktxVersion"
@@ -22,12 +22,13 @@ dependencies {
   api "io.github.libktx:ktx-math:$ktxVersion"
   api "io.github.libktx:ktx-preferences:$ktxVersion"
   api "io.github.libktx:ktx-reflect:$ktxVersion"
+  api "io.github.libktx:ktx-scene2d:$ktxVersion"
   api "io.github.libktx:ktx-style:$ktxVersion"
   api "io.github.libktx:ktx-tiled:$ktxVersion"
   api "io.github.libktx:ktx-vis-style:$ktxVersion"
   api "io.github.libktx:ktx-vis:$ktxVersion"
-  api "net.onedaybeard.artemis:artemis-odb:$artemisOdbVersion"
   api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
   api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinxCoroutinesVersion"
   api "io.insert-koin:koin-core:$koinVersion"
+  api "io.github.quillraven.fleks:Fleks:2.2"
 }
