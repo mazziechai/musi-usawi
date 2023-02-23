@@ -7,6 +7,7 @@ import cafe.ferret.musi.system.RenderSystem
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.graphics.g2d.TextureRegion
+import com.badlogic.gdx.maps.tiled.TiledMap
 import com.badlogic.gdx.maps.tiled.TmxMapLoader
 import com.badlogic.gdx.scenes.scene2d.EventListener
 import com.badlogic.gdx.scenes.scene2d.Stage
@@ -14,6 +15,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.github.quillraven.fleks.world
 import ktx.app.KtxScreen
+import ktx.assets.disposeSafely
 import ktx.log.logger
 
 
@@ -40,6 +42,8 @@ class GameScreen : KtxScreen {
         }
     }
 
+    private var currentMap: TiledMap? = null
+
     override fun show() {
         log.debug { "Loading" }
 
@@ -49,8 +53,8 @@ class GameScreen : KtxScreen {
             }
         }
 
-        val tiledMap = TmxMapLoader().load("map/devMap.tmx")
-        stage.fire(MapChangeEvent(tiledMap))
+        currentMap = TmxMapLoader().load("map/devMap.tmx")
+        stage.fire(MapChangeEvent(currentMap!!))
 
         gameWorld.entity {
             it += ImageComponent(Image(TextureRegion(devTexturesAtlas.findRegion("texture"), 8 * 9, 0, 8, 8)).apply {
@@ -70,9 +74,10 @@ class GameScreen : KtxScreen {
 
     override fun dispose() {
         log.debug { "Disposing" }
-        stage.dispose()
-        devTexturesAtlas.dispose()
+        stage.disposeSafely()
+        devTexturesAtlas.disposeSafely()
         gameWorld.dispose()
+        currentMap.disposeSafely()
     }
 
     companion object {
