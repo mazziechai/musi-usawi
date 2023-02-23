@@ -34,7 +34,7 @@ prettyPrint=true
 legacyOutput=false
 
 scaleFactors=[{suffix:"",factor:1,resampling:bicubic}]
-inputFiles=[{path:graphics/devTextures.png,type:Input,regionName:null}]
+inputFiles=[{path:graphics,type:Input,dirFilePrefix:null,recursive:true,flattenPaths:false}]
 keepInputFileExtensions=false
 
 

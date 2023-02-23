@@ -1,5 +1,14 @@
 devTextures.png
-	size: 128, 128
+	size: 256, 128
 	repeat: none
+animationtest/idle
+	index: 0
+	bounds: 130, 120, 8, 8
+animationtest/idle
+	index: 2
+	bounds: 130, 110, 8, 8
+animationtest/idle
+	index: 1
+	bounds: 140, 120, 8, 8
 devTextures
 	bounds: 0, 0, 128, 128

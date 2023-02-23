@@ -13,6 +13,7 @@ import com.github.quillraven.fleks.ComponentType
  * @param image The [com.badlogic.gdx.scenes.scene2d.ui.Image] that should be stored by the component.
  */
 data class ImageComponent(var image: Image) : Component<ImageComponent>, Comparable<ImageComponent> {
+
     override fun type(): ComponentType<ImageComponent> = ImageComponent
 
     /**

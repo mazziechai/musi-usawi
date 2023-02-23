@@ -1,10 +1,15 @@
 package cafe.ferret.musi.screen
 
+import cafe.ferret.musi.component.AnimationComponent
+import cafe.ferret.musi.component.AnimationModel
+import cafe.ferret.musi.component.AnimationType
 import cafe.ferret.musi.component.ImageComponent
 import cafe.ferret.musi.event.MapChangeEvent
 import cafe.ferret.musi.extension.fire
+import cafe.ferret.musi.system.AnimationSystem
 import cafe.ferret.musi.system.RenderSystem
 import com.badlogic.gdx.graphics.OrthographicCamera
+import com.badlogic.gdx.graphics.g2d.Animation.PlayMode
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
 import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.maps.tiled.TiledMap
@@ -40,6 +45,7 @@ class GameScreen : KtxScreen {
 
         systems {
             add(RenderSystem())
+            add(AnimationSystem())
         }
     }
 
@@ -70,9 +76,24 @@ class GameScreen : KtxScreen {
                         8
                     )
                 ).apply {
+                    setPosition(8f, 8f)
                     setSize(1f, 1f)
-                    setPosition(4f, 4f)
                 })
+        }
+
+        gameWorld.entity {
+            it += ImageComponent(
+                Image().apply {
+                    setPosition(4f, 8f)
+                    setSize(1f, 1f)
+                }
+            )
+            it += AnimationComponent(playMode = PlayMode.LOOP_PINGPONG).apply {
+                nextAnimation(
+                    AnimationModel.ANIMATIONTEST,
+                    AnimationType.IDLE
+                )
+            }
         }
     }
 
