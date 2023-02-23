@@ -67,20 +67,13 @@ class GameScreen : KtxScreen {
         // Create a development sprite of the player
         gameWorld.entity {
             it += ImageComponent(
-                Image(
-                    TextureRegion(
-                        devTexturesAtlas.findRegion("devTextures"),
-                        8 * 9,
-                        0,
-                        8,
-                        8
-                    )
-                ).apply {
+                Image(TextureRegion(devTexturesAtlas.findRegion("player"))).apply {
                     setPosition(8f, 8f)
-                    setSize(1f, 1f)
+                    setSize(2f, 2f)
                 })
         }
 
+        // Animation test
         gameWorld.entity {
             it += ImageComponent(
                 Image().apply {
