@@ -1,0 +1,5 @@
+devTextures.png
+	size: 128, 128
+	repeat: none
+devTextures
+	bounds: 0, 0, 128, 128

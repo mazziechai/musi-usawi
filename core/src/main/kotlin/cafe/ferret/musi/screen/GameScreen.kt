@@ -26,10 +26,11 @@ class GameScreen : KtxScreen {
             OrthographicCamera(20f, 15f)
         )
     )
-    private val devTexturesAtlas = TextureAtlas("graphics/devTextures.atlas")
+    private val devTexturesAtlas = TextureAtlas("atlas/devTextures.atlas")
     private val gameWorld = world {
         injectables {
             add(stage)
+            add(devTexturesAtlas)
         }
 
         components {
@@ -47,6 +48,7 @@ class GameScreen : KtxScreen {
     override fun show() {
         log.debug { "Loading" }
 
+        // Add listeners to the world
         gameWorld.systems.forEach { system ->
             if (system is EventListener) {
                 stage.addListener(system)
@@ -56,11 +58,21 @@ class GameScreen : KtxScreen {
         currentMap = TmxMapLoader().load("map/devMap.tmx")
         stage.fire(MapChangeEvent(currentMap!!))
 
+        // Create a development sprite of the player
         gameWorld.entity {
-            it += ImageComponent(Image(TextureRegion(devTexturesAtlas.findRegion("texture"), 8 * 9, 0, 8, 8)).apply {
-                setSize(1f, 1f)
-                setPosition(4f, 4f)
-            })
+            it += ImageComponent(
+                Image(
+                    TextureRegion(
+                        devTexturesAtlas.findRegion("devTextures"),
+                        8 * 9,
+                        0,
+                        8,
+                        8
+                    )
+                ).apply {
+                    setSize(1f, 1f)
+                    setPosition(4f, 4f)
+                })
         }
     }
 

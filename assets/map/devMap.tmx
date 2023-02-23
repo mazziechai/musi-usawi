@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="3" nextobjectid="1">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="5" nextobjectid="4">
  <tileset firstgid="1" source="devTileset.tsx"/>
  <layer id="2" name="bgd_0" width="20" height="15">
   <data encoding="base64" compression="zlib">
    eJyTZGBgkBzFo3gUj+IhgAHtZB1N
   </data>
  </layer>
- <layer id="1" name="fgd_0" width="20" height="15">
+ <layer id="3" name="bgd_1" width="20" height="15">
   <data encoding="base64" compression="zlib">
-   eJzl08cKAjEUheHYXdlH3Ym9j73XceNa30Df/yH8FwaGEAjB7DzwcXeXewIJhBA3BI7mA0+H84W3wynvNMW2rym2fSOIIoY47l8ytn3zKKCIkrIvvNf0HvLOOhpoohXap94pk0ASKaQ1fWeYY4ElMsiihpxmn4cyKqhq+qrpY4AhRhjDxwRTtNFBFz1NXzU77HHAESecccEVK6yxwVbT99eoff/l/34AVUpC8g==
+   eJxjYBgFgxEwAjETEDMDMQsVzBMEYiEgFgZiESCWhGJygSIQKwGxMhCrUOw6BgZDIDYCYmMgNqGCeaNgeAIAdzgB2w==
   </data>
  </layer>
+ <layer id="1" name="fgd_0" width="20" height="15">
+  <data encoding="base64" compression="zlib">
+   eJzl07kKwkAURuHbuFRq49JZqTEusXHXaNJMrW+g7/8QnsJAuARuBqfzh48pBkJOMZmI5MgCnQ88A54vvAOexX9a8+215tur576K/dpb/p6ruNezep2i10ATLbTF7u2gizF6Ffd9DDDESOzeOWIssMQKayTYYIIpZohq9B5xwhkXXJHihju22GGPQ41e3+nef3m/H2pOQUo=
+  </data>
+ </layer>
+ <objectgroup id="4" name="entities">
+  <object id="2" class="player" gid="10" x="24" y="80" width="8" height="8"/>
+ </objectgroup>
 </map>
