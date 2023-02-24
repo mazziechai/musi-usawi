@@ -2,10 +2,47 @@
     "automappingRulesFile": "",
     "commands": [
     ],
+    "compatibilityVersion": 1080,
     "extensionsPath": "extensions",
     "folders": [
         "."
     ],
     "propertyTypes": [
+        {
+            "color": "#ffa0a0a4",
+            "id": 4,
+            "members": [
+            ],
+            "name": "animationtest",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset"
+            ]
+        },
+        {
+            "color": "#ffa0a0a4",
+            "id": 3,
+            "members": [
+            ],
+            "name": "player",
+            "type": "class",
+            "useAs": [
+                "property",
+                "map",
+                "layer",
+                "object",
+                "tile",
+                "tileset",
+                "wangcolor",
+                "wangset"
+            ]
+        }
     ]
 }

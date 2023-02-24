@@ -1,5 +1,6 @@
 package cafe.ferret.musi.system
 
+import cafe.ferret.musi.Game.Companion.UNIT_SCALE
 import cafe.ferret.musi.component.ImageComponent
 import cafe.ferret.musi.event.MapChangeEvent
 import com.badlogic.gdx.graphics.OrthographicCamera
@@ -29,7 +30,7 @@ class RenderSystem(private val stage: Stage = inject()) :
 
     private val backgroundLayers = mutableListOf<TiledMapTileLayer>()
     private val foregroundLayers = mutableListOf<TiledMapTileLayer>()
-    private val mapRenderer = OrthogonalTiledMapRenderer(null, 1 / 8f, stage.batch)
+    private val mapRenderer = OrthogonalTiledMapRenderer(null, UNIT_SCALE, stage.batch)
     private val orthographicCamera = stage.camera as OrthographicCamera
 
     /**

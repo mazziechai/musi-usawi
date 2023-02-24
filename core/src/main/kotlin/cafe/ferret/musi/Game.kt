@@ -12,10 +12,15 @@ import ktx.app.KtxScreen
 class Game : KtxGame<KtxScreen>() {
     override fun create() {
         if (System.getenv("MUSI_DEBUG") == "true") {
+            @Suppress("GDXKotlinLogLevel")
             Gdx.app.logLevel = Application.LOG_DEBUG
         }
 
         addScreen(GameScreen())
         setScreen<GameScreen>()
+    }
+
+    companion object {
+        const val UNIT_SCALE = 1 / 8f
     }
 }

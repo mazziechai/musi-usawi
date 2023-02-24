@@ -1,22 +1,17 @@
 package cafe.ferret.musi.screen
 
-import cafe.ferret.musi.component.AnimationComponent
-import cafe.ferret.musi.component.AnimationModel
-import cafe.ferret.musi.component.AnimationType
 import cafe.ferret.musi.component.ImageComponent
 import cafe.ferret.musi.event.MapChangeEvent
 import cafe.ferret.musi.extension.fire
 import cafe.ferret.musi.system.AnimationSystem
+import cafe.ferret.musi.system.EntitySpawnSystem
 import cafe.ferret.musi.system.RenderSystem
 import com.badlogic.gdx.graphics.OrthographicCamera
-import com.badlogic.gdx.graphics.g2d.Animation.PlayMode
 import com.badlogic.gdx.graphics.g2d.TextureAtlas
-import com.badlogic.gdx.graphics.g2d.TextureRegion
 import com.badlogic.gdx.maps.tiled.TiledMap
 import com.badlogic.gdx.maps.tiled.TmxMapLoader
 import com.badlogic.gdx.scenes.scene2d.EventListener
 import com.badlogic.gdx.scenes.scene2d.Stage
-import com.badlogic.gdx.scenes.scene2d.ui.Image
 import com.badlogic.gdx.utils.viewport.FitViewport
 import com.github.quillraven.fleks.world
 import ktx.app.KtxScreen
@@ -44,8 +39,9 @@ class GameScreen : KtxScreen {
         }
 
         systems {
-            add(RenderSystem())
+            add(EntitySpawnSystem())
             add(AnimationSystem())
+            add(RenderSystem())
         }
     }
 
@@ -63,31 +59,6 @@ class GameScreen : KtxScreen {
 
         currentMap = TmxMapLoader().load("map/devMap.tmx")
         stage.fire(MapChangeEvent(currentMap!!))
-
-        // Create a development sprite of the player
-        gameWorld.entity {
-            it += ImageComponent(
-                Image(TextureRegion(devTexturesAtlas.findRegion("player"))).apply {
-                    setPosition(8f, 8f)
-                    setSize(2f, 2f)
-                })
-        }
-
-        // Animation test
-        gameWorld.entity {
-            it += ImageComponent(
-                Image().apply {
-                    setPosition(4f, 8f)
-                    setSize(1f, 1f)
-                }
-            )
-            it += AnimationComponent(playMode = PlayMode.LOOP_PINGPONG).apply {
-                nextAnimation(
-                    AnimationModel.ANIMATIONTEST,
-                    AnimationType.IDLE
-                )
-            }
-        }
     }
 
     override fun resize(width: Int, height: Int) {

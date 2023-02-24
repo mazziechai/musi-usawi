@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="5" nextobjectid="4">
+<map version="1.8" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="8" tileheight="8" infinite="0" nextlayerid="5" nextobjectid="12">
  <tileset firstgid="1" source="devTileset.tsx"/>
+ <tileset firstgid="257" source="player.tsx"/>
+ <tileset firstgid="261" source="animationtest.tsx"/>
  <layer id="2" name="bgd_0" width="20" height="15">
   <data encoding="base64" compression="zlib">
    eJyTZGBgkBzFo3gUj+IhgAHtZB1N
@@ -17,6 +19,6 @@
   </data>
  </layer>
  <objectgroup id="4" name="entities">
-  <object id="2" class="player" gid="10" x="24" y="80" width="8" height="8"/>
+  <object id="5" gid="261" x="56" y="56" width="8" height="8"/>
  </objectgroup>
 </map>
