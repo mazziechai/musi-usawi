@@ -18,9 +18,9 @@ class AnimationSystem(private val atlas: TextureAtlas = inject()) :
     private val cachedAnimations = mutableMapOf<String, Animation<TextureRegionDrawable>>()
 
     /**
-     * Updates the state for each [cafe.ferret.musi.component.AnimationComponent].
+     * Updates the state for each [AnimationComponent].
      *
-     * First, the [cafe.ferret.musi.component.ImageComponent] Drawable is updated with the next animation.
+     * First, the [ImageComponent] Drawable is updated with the next animation.
      * If there is no animation, the animation's state time is incremented by the delta time, and the key frame is set
      * to the state time.
      */
@@ -39,6 +39,9 @@ class AnimationSystem(private val atlas: TextureAtlas = inject()) :
         entity[ImageComponent].image.drawable = animationComponent.animation.getKeyFrame(animationComponent.stateTime)
     }
 
+    /**
+     * Creates a new [Animation] with an [atlasKey] and then caches the [Animation].
+     */
     private fun animation(atlasKey: String): Animation<TextureRegionDrawable> {
         return cachedAnimations.getOrPut(atlasKey) {
             LOG.debug { "Creating new animation $atlasKey" }

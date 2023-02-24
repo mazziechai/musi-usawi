@@ -34,7 +34,7 @@ class RenderSystem(private val stage: Stage = inject()) :
     private val orthographicCamera = stage.camera as OrthographicCamera
 
     /**
-     * Gets the [com.badlogic.gdx.scenes.scene2d.Stage] and renders every [com.badlogic.gdx.scenes.scene2d.Actor].
+     * Gets the [Stage] and renders every [com.badlogic.gdx.scenes.scene2d.Actor].
      */
     override fun onTick() {
         super.onTick()
@@ -66,7 +66,8 @@ class RenderSystem(private val stage: Stage = inject()) :
     }
 
     /**
-     * Handles events, specifically the [cafe.ferret.musi.event.MapChangeEvent].
+     * Handles the [MapChangeEvent].
+     *
      * The handling of this event checks if the map layer is a foreground layer, otherwise it is a background.
      */
     override fun handle(event: Event): Boolean {

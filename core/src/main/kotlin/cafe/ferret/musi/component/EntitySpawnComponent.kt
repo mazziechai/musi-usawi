@@ -7,6 +7,12 @@ import ktx.math.vec2
 
 data class EntitySpawnConfiguration(val model: AnimationModel)
 
+/**
+ * Holds map object spawn data.
+ *
+ * @param type The type the map object, as a string.
+ * @param location The x and y of the map object.
+ */
 data class EntitySpawnComponent(
     var type: String = "",
     var location: Vector2 = vec2()

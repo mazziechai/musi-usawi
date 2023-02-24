@@ -18,11 +18,11 @@ enum class AnimationType {
 }
 
 /**
- * Holds [com.badlogic.gdx.graphics.g2d.Animation] state.
+ * Holds [Animation] state.
  *
  * @param nextAnimation The next animation's atlas key.
  * @param stateTime The time spent in the current animation state.
- * @param playMode The [com.badlogic.gdx.graphics.g2d.Animation.PlayMode].
+ * @param playMode The [Animation.PlayMode].
  */
 data class AnimationComponent(
     var nextAnimation: String = NO_ANIMATION,
